@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1584444519 source:c:\cbp\referencetoprivatedatamember\main.cpp
+	<iostream>
+	"Time.h"
+
+1584444486 c:\cbp\referencetoprivatedatamember\time.h
+
+1584444554 source:c:\cbp\referencetoprivatedatamember\time.cpp
+	"Time.h"
+	<iostream>
+

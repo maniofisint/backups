@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1591098678 source:e:\cbprojects\99ap\teststlcontainers\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

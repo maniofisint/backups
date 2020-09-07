@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1586219723 source:c:\cbp\memberobject\employee.cpp
+	<iostream>
+	"Employee.h"
+	"Date.h"
+
+1586220926 c:\cbp\memberobject\employee.h
+	<string>
+	"Date.h"
+
+1586220298 c:\cbp\memberobject\date.h
+
+1586219945 source:c:\cbp\memberobject\main.cpp
+	<iostream>
+	"Employee.h"
+
+1586220286 source:c:\cbp\memberobject\date.cpp
+	<iostream>
+	<stdexcept>
+	"Date.h"
+
+1586257351 source:c:\cbp\19- memberobject\date.cpp
+	<iostream>
+	<stdexcept>
+	"Date.h"
+
+1586259308 c:\cbp\19- memberobject\date.h
+
+1586259126 source:c:\cbp\19- memberobject\employee.cpp
+	<iostream>
+	"Employee.h"
+	"Date.h"
+
+1586259548 c:\cbp\19- memberobject\employee.h
+	<string>
+	"Date.h"
+
+1586258175 source:c:\cbp\19- memberobject\main.cpp
+	<iostream>
+	"Employee.h"
+

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1586223501 source:c:\cbp\cascadedfunction\time.cpp
+	<iostream>
+	<iomanip>
+	<stdexcept>
+	"Time.h"
+
+1586223375 c:\cbp\cascadedfunction\time.h
+
+1586223614 source:c:\cbp\cascadedfunction\main.cpp
+	<iostream>
+	"Time.h"
+
+1586226154 source:c:\cbp\22- cascadedfunction\main.cpp
+	<iostream>
+	"Time.h"
+
+1586688079 c:\cbp\22- cascadedfunction\time.h
+
+1586226099 source:c:\cbp\22- cascadedfunction\time.cpp
+	<iostream>
+	<iomanip>
+	<stdexcept>
+	"Time.h"
+

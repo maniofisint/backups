@@ -1,0 +1,96 @@
+# depslib dependency file v1.0
+1588073726 source:c:\cbp\polygoninheritance\main.cpp
+	<iostream>
+	"Point.h"
+	"Polygon.h"
+	"Triangle.h"
+
+1588071706 c:\cbp\polygoninheritance\point.h
+
+1588074026 c:\cbp\polygoninheritance\polygon.h
+	"Point.h"
+
+1588071751 source:c:\cbp\polygoninheritance\point.cpp
+	"Point.h"
+	<iostream>
+	<cmath>
+
+1588072302 source:c:\cbp\polygoninheritance\polygon.cpp
+	"Polygon.h"
+	<stdexcept>
+	<iostream>
+
+1588074006 source:c:\cbp\polygoninheritance\triangle.cpp
+	"Triangle.h"
+	<cmath>
+
+1588072895 c:\cbp\polygoninheritance\triangle.h
+	"Polygon.h"
+
+1588071751 source:c:\cbp\32- polygoninheritance\point.cpp
+	"Point.h"
+	<iostream>
+	<cmath>
+
+1588071706 c:\cbp\32- polygoninheritance\point.h
+
+1588645918 source:c:\cbp\32- polygoninheritance\polygon.cpp
+	"Polygon.h"
+	<stdexcept>
+	<iostream>
+
+1588645904 c:\cbp\32- polygoninheritance\polygon.h
+	"Point.h"
+
+1588645904 source:c:\cbp\32- polygoninheritance\triangle.cpp
+	"Triangle.h"
+	<cmath>
+
+1588645925 c:\cbp\32- polygoninheritance\triangle.h
+	"Polygon.h"
+
+1588645989 source:c:\cbp\32- polygoninheritance\main.cpp
+	<iostream>
+	<graphics.h>
+	"Point.h"
+	"Polygon.h"
+	"Triangle.h"
+
+1588071751 source:c:\cbp\32- polygoninheritance - copy\point.cpp
+	"Point.h"
+	<iostream>
+	<cmath>
+
+1588071706 c:\cbp\32- polygoninheritance - copy\point.h
+
+1588675222 source:c:\cbp\32- polygoninheritance - copy\polygon.cpp
+	"Polygon.h"
+	<stdexcept>
+	<iostream>
+
+1588677845 c:\cbp\32- polygoninheritance - copy\polygon.h
+	"Point.h"
+
+1588677325 source:c:\cbp\32- polygoninheritance - copy\triangle.cpp
+	"Triangle.h"
+	<cmath>
+	<iostream>
+
+1588678078 c:\cbp\32- polygoninheritance - copy\triangle.h
+	"Polygon.h"
+
+1588677857 source:c:\cbp\32- polygoninheritance - copy\main.cpp
+	<iostream>
+	"Point.h"
+	"Polygon.h"
+	"Triangle.h"
+	"Rectangle.h"
+
+1588684287 source:c:\cbp\32- polygoninheritance - copy\rectangle.cpp
+	"Rectangle.h"
+	<cmath>
+	<iostream>
+
+1588678078 c:\cbp\32- polygoninheritance - copy\rectangle.h
+	"Polygon.h"
+

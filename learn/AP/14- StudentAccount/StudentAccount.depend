@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1584271552 source:c:\cbp\studentaccount\main.cpp
+	"StudentAccount.h"
+
+1584271553 c:\cbp\studentaccount\studentaccount.h
+	<string>
+	<iostream>
+
+1584271562 source:c:\cbp\studentaccount\studentaccount.cpp
+	"StudentAccount.h"
+

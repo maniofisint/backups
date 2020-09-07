@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1584268091 source:c:\cbp\validatedata\course.cpp
+	"Course.h"
+
+1584267626 c:\cbp\validatedata\course.h
+	<iostream>
+	<string>
+
+1584268052 source:c:\cbp\validatedata\main.cpp
+	"Course.h"
+

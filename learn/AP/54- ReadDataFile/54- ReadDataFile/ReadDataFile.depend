@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1591704131 source:e:\cbprojects\99ap\readdatafile\main.cpp
+	<iostream>
+	<fstream>
+

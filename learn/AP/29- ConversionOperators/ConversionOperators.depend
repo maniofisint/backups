@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1587899105 source:c:\cbp\conversionoperators\array.cpp
+	<iostream>
+	<iomanip>
+	<stdexcept>
+	<initializer_list>
+	"Array.h"
+
+1587899391 c:\cbp\conversionoperators\array.h
+	<iostream>
+
+1587899177 source:c:\cbp\conversionoperators\main.cpp
+	<iostream>
+	"Array.h"
+

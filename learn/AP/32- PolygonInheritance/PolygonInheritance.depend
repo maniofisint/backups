@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1588073726 source:c:\cbp\polygoninheritance\main.cpp
+	<iostream>
+	"Point.h"
+	"Polygon.h"
+	"Triangle.h"
+
+1588071706 c:\cbp\polygoninheritance\point.h
+
+1588074026 c:\cbp\polygoninheritance\polygon.h
+	"Point.h"
+
+1588071751 source:c:\cbp\polygoninheritance\point.cpp
+	"Point.h"
+	<iostream>
+	<cmath>
+
+1588072302 source:c:\cbp\polygoninheritance\polygon.cpp
+	"Polygon.h"
+	<stdexcept>
+	<iostream>
+
+1588074006 source:c:\cbp\polygoninheritance\triangle.cpp
+	"Triangle.h"
+	<cmath>
+
+1588072895 c:\cbp\polygoninheritance\triangle.h
+	"Polygon.h"
+

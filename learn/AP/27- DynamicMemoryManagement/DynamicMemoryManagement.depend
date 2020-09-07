@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1587464598 source:c:\cbp\dynamicmemorymanagement\main.cpp
+	<iostream>
+
+1586257351 source:c:\cbp\dynamicmemorymanagement\date.cpp
+	<iostream>
+	<stdexcept>
+	"Date.h"
+
+1587465791 c:\cbp\dynamicmemorymanagement\date.h
+

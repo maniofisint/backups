@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1584445375 source:c:\cbp\defaultmemberwiseassignment\main.cpp
+	<iostream>
+	"Time.h"
+
+1584444994 c:\cbp\defaultmemberwiseassignment\time.h
+
+1584445244 source:c:\cbp\defaultmemberwiseassignment\time.cpp
+	"Time.h"
+	<iostream>
+	<iomanip>
+

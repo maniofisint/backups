@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1587468634 source:c:\cbp\arrayclass\main.cpp
+	<iostream>
+	<stdexcept>
+	"Array.h"
+
+1587468684 c:\cbp\arrayclass\array.h
+	<iostream>
+
+1587468684 source:c:\cbp\arrayclass\array.cpp
+	<iostream>
+	<iomanip>
+	<stdexcept>
+	<initializer_list>
+	"Array.h"
+

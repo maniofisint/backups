@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1591524994 source:e:\cbprojects\99ap\stl-list\main.cpp
+	<iostream>
+	<list>
+

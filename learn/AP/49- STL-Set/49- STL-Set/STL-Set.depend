@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1591526899 source:e:\cbprojects\99ap\stl-set\main.cpp
+	<iostream>
+	<set>
+

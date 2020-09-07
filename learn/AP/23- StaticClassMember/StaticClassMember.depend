@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1586226378 source:c:\cbp\23- staticclassmember\employee.cpp
+	<iostream>
+	"Employee.h"
+
+1586689048 c:\cbp\23- staticclassmember\employee.h
+	<string>
+
+1586226269 source:c:\cbp\23- staticclassmember\main.cpp
+	<iostream>
+	"Employee.h"
+
