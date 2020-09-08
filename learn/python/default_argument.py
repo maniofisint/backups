@@ -86,11 +86,47 @@ cheeseshop("Limburger", "It's very runny, sir.",
            sketch="Cheese Shop Sketch")
 """
 
+#Arbitrary Argument lists
+"""
 def concat(*args , sep='/'):
     return sep.join(args)
 
 
-print(concat ( "earth" , "mars" , "venus"))
-print(concat ( "earth" , "mars" , "venus") ,  sep = '..')
+print(concat ( "earth" , "mars" , "venus") , end = '\t')
+print(concat ( "earth" , "mars" , "venus" ,  sep = '.'))
+"""
+
+
+#Unpacking Argument Lists
+"""
+print( list(range(3,6)))
+args = [3,6]
+print( list(range(*args)))#the same as two lines ago
+"""
+"""
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+
+d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+parrot(**d)
+print (d)
+"""
+
+# Lambda Expression
+"""
+def make_incrementor(n):
+    return lambda x : x + n
+
+f = make_incrementor(42)
+print(f(0))
+print(f(22))
+"""
+"""
+pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+pairs.sort(key = lambda pair : pair[1])
+print(pairs)
+"""
 
 
