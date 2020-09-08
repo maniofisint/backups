@@ -1,0 +1,11 @@
+from collections import deque
+q = deque( ["eric" , "john", "Michal"])
+print(q)
+q.append("Terry")
+print(q)
+q.appendleft("Graham")
+print(q)
+q.pop()
+print(q)
+q.popleft()
+print(q)
