@@ -117,3 +117,4 @@ print('size of second stack:',s.size_second())"""
     s.pop_second()
     s.push_first(5)
     exec(check)
+
