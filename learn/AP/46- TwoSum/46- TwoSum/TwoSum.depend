@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1591282559 source:e:\cbprojects\99ap\twosum\main.cpp
-	<iostream>
-	<stdlib.h>
-	<time.h>
-	<algorithm>
-

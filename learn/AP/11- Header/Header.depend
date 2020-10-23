@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1583836126 source:c:\cbp\header\main.cpp
-	"Course.h"
-
-1583837206 c:\cbp\header\course.h
-	<iostream>
-	<string>
-

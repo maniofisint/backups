@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1591702232 source:e:\cbprojects\99ap\textfile\main.cpp
-	<iostream>
-	<fstream>
-	<string>
-

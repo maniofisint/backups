@@ -1,4 +1,0 @@
-Mohammad 3
-Ali 5
-Reza 0
-abcd 4

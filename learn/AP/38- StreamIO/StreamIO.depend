@@ -1,5 +1,0 @@
-# depslib dependency file v1.0
-1589281815 source:c:\cbp\streamio\main.cpp
-	<iostream>
-	<iomanip>
-
