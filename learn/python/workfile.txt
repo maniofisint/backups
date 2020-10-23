@@ -1,0 +1,10 @@
+hello world
+fuck you worldI don't know
+I don't know
+I don't know
+I don't know('the answer', 42)
+I don't know('the answer', 42)
+I don't know
+('the answer', 42)
+I don't know
+('the answer', 42)
