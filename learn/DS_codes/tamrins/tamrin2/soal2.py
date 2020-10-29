@@ -52,33 +52,53 @@ def convert_to_list(A):
             a.insert_last(int(A[i]))
     return a 
 
+def is_first_bigger(a, b):
+    is_a_bigger = False
+
+    if len(a) > len(b):
+        is_a_bigger = True
+    elif len(a) < len(b):
+        is_a_bigger = False
+    elif a.tail.element > b.tail.element:
+        is_a_bigger = True
+    elif a.tail.element < b.tail.element:
+        is_a_bigger = False
+    else:
+        ap = a.head.next
+        bp = b.head.next
+        while ap is not None:
+            if ap.element > bp.element:
+                is_a_bigger = True
+            elif ap.element < bp.element:
+                is_a_bigger = False
+            ap = ap.next
+            bp = bp.next
+
+    return is_a_bigger
+
 def sum(a, b):
     c = LinkedList()
     aSign = a.head.element
     bSign = b.head.element
+
     if aSign * bSign == 1:
         c.insert_last(aSign)
         aSign = bSign = 1
     else:
-        is_a_bigger = False
-        if len(a) > len(b):
-            is_a_bigger = True
-        elif len(a) < len(b):
-            is_a_bigger = False
-        elif a.tail.element
-        if len(a) > len(b):
+        is_a_bigger = is_first_bigger(a, b)
+        if is_a_bigger:
             c.insert_last(aSign)
             aSign = 1
             bSign = -1
-        elif len(a) < len(b):
+        else:
             c.insert_last(bSign)
             aSign = -1
             bSign = 1
-        else:
-            if 
+
     carry = 0
     ap = a.head.next
     bp = b.head.next
+    
     while not ( ap is None and bp is None):
         aDigit = 0 if ap is None else ap.element
         bDigit = 0 if bp is None else bp.element
