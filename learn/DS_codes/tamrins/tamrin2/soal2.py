@@ -1,4 +1,4 @@
-class LinkedList:
+class number:
     class Node:
         def __init__(self, element, next):
             self.element = element
@@ -33,15 +33,26 @@ class LinkedList:
         self.size += 1
 
     def __str__(self):
-        p = self.head
-        l = []
+        p = self.head.next
+        s = str()
         while p is not None:
-            l.append(p.element)
+            s += str(p.element)
             p = p.next
-        return str(l)
+
+        s = s[::-1]
+        index = 0
+        while s[index] == '0' and index < len(s)-1 :
+            if index + 1 < len(s):
+                index += 1
+        s = s[index:]
+        if self.head.element == -1:
+            s = '-' + s
+        if s == '-0':
+            s = '0'
+        return s
 
 def convert_to_list(A):
-    a = LinkedList()
+    a = number()
     if A[0] == '-':
         a.insert_last(-1)
         for i in range(len(A)-1, 0 , -1):
@@ -57,12 +68,8 @@ def is_first_bigger(a, b):
 
     if len(a) > len(b):
         is_a_bigger = True
-    elif len(a) < len(b):
-        is_a_bigger = False
     elif a.tail.element > b.tail.element:
         is_a_bigger = True
-    elif a.tail.element < b.tail.element:
-        is_a_bigger = False
     else:
         ap = a.head.next
         bp = b.head.next
@@ -77,7 +84,7 @@ def is_first_bigger(a, b):
     return is_a_bigger
 
 def sum(a, b):
-    c = LinkedList()
+    c = number()
     aSign = a.head.element
     bSign = b.head.element
 
@@ -99,27 +106,46 @@ def sum(a, b):
     ap = a.head.next
     bp = b.head.next
     
-    while not ( ap is None and bp is None):
+    while not(ap is None and bp is None):
+
         aDigit = 0 if ap is None else ap.element
         bDigit = 0 if bp is None else bp.element
 
-        y = 10 * aSign * bSign
         x = aDigit * aSign + bDigit * bSign + carry
-        c.insert_last( x % y)
-        carry = x // y
+        c.insert_last( x % 10)
+        carry = x // 10
 
         ap = ap.next if ap is not None else ap
         bp = bp.next if bp is not None else bp
-    c.insert_last(carry)
+    
+    if carry != 0:
+        c.insert_last(carry)
+
     return c
 
+def Sum(a, b):
+    a = convert_to_list(a)
+    b = convert_to_list(b)
+    c = sum(a, b)
+    print('(', a, ') + (', b, ') =', c)
+    
+    
 
-a = input()
-b = input()
-a = convert_to_list(a)
-b = convert_to_list(b)
-print(a)
-print(b)
-c = sum(a, b)
-print(c)
 
+
+Sum('0', '0')
+Sum('-0', '-0')
+Sum('1', '2')
+Sum('9', '1')
+Sum('9', '9')
+Sum('-1', '-5')
+Sum('-9', '-2')
+Sum('-9', '-9')
+Sum('9', '-2')
+Sum('-9', '2')
+Sum('9', '-9')
+Sum('9999999999', '1')
+Sum('99999999999999999999999999999999999999999999999999999999', '00009999999999999999999999999999999999999999999999999')
+Sum('-9999999999999999999999', '2')
+Sum('888888888888888888888888', '-1')
+Sum('100000000','900000000')
