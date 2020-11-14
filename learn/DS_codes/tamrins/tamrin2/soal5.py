@@ -255,4 +255,4 @@ print(q.minimum())
 print(q.maximum())
 """
 exec(STACK)
-exec(QUEUE)
+#exec(QUEUE)

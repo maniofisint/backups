@@ -114,7 +114,7 @@ print('size of second stack:',s.size_second())"""
 
 
     print('\nand more testing...')
-    s.pop_second()
+    print(s.pop_second())
     s.push_first(5)
     exec(check)
 
