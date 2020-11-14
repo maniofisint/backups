@@ -1,0 +1,22 @@
+
+from random import randint,random
+
+def do_nothing(n, mul):
+    num = random()
+    i = 1
+    count = 0
+    
+    while i < n:
+        count += 1
+        i *= mul
+    print(count)
+    for i in range(count):
+        for j in range(count):
+            num += random()* 10 ** randint(0,3)
+
+    num = None
+    i = None
+    print("did nothing successfully")
+    
+
+do_nothing(128, 2)
