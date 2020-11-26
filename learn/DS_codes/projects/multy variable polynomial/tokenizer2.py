@@ -1,12 +1,11 @@
-string = '-12x(y(z-y(z)))'
-string = '-12.3123'
-string = '12x(y(z-y(z)))-12.432'
-string = '0.987'
-string = '1456.098g'
-string = '(3+x^2)+xyz(xy+y-z)+x^3(1-3x)'
+string1 = '-12x(y(z-y(z)))'
+string2 = '-12.3123'
+string3 = '12x(y(z-y(z)))-12.432'
+string4 = '0.987'
+string5 = '1456.098g'
+string6 = '(3+x^2)+xyz(xy+y-z)+x^3(1-3x)'
 
 # string = ()()...()+ .... + ()()()
-# var, opr, prn -> v, o, p
 
 
 def token(string):
@@ -155,42 +154,27 @@ def seprate_by_parenthesis(ls):
         lis.append(holder)
     return lis
 
-def mult(first, second):
-    first = seprate_by_plus(first)
-    second = seprate_by_plus(second)
-    third = []
-    for i in first:
-        for j in second:
-            third += sub_mult(i, j)
-            third.append('+')
-    third.pop()
-    return third
-
-def sub_mult(first, second):
-    third = first + second
-    return clean(third)
-
-def clean(third):
-    third.sort(key= lambda x: x[1], reverse=True)
+def clean(ls):
+    ls.sort(key= lambda x: x[1], reverse=True)
     out = []
     ind , constant, power = 0, 1, 0
-    for i in third:
+    for i in ls:
         constant *= i[0]
     
-    while ind < len(third):
-        if not third[ind][1] == third[0][1]:
+    while ind < len(ls):
+        if not ls[ind][1] == ls[0][1]:
             break
-        power += third[ind][2]
+        power += ls[ind][2]
         ind += 1
 
-    out.append((constant, third[0][1], power))
+    out.append((constant, ls[0][1], power))
 
-    while ind < len(third):
+    while ind < len(ls):
         power = 0
-        ch = third[ind][1]
-        while third[ind][1] == ch:
-            power += third[ind][2]
-            if ind + 1 == len(third):
+        ch = ls[ind][1]
+        while ls[ind][1] == ch:
+            power += ls[ind][2]
+            if ind + 1 == len(ls):
                 ind += 1
                 break
             ind += 1
@@ -199,6 +183,22 @@ def clean(third):
     return out
 
 def destroy_parenthesis(lis):
+
+    def mult(first, second):
+
+        def sub_mult(first, second):
+            third = first + second
+            return clean(third)
+            
+        first = seprate_by_plus(first)
+        second = seprate_by_plus(second)
+        third = []
+        for i in first:
+            for j in second:
+                third += sub_mult(i, j)
+                third.append('+')
+        third.pop()
+        return third
 
     def has_parenthesis():
         for i in lis:
@@ -213,10 +213,7 @@ def destroy_parenthesis(lis):
     lis = list(map(seprate_by_parenthesis, lis))
     
     for i in range(len(lis)):
-        if len(lis[i]) == 1:
-            lis[i] = clean(lis[i][0])
-
-        elif len(lis[i]) > 1:
+        if len(lis[i]) > 1:
             lis[i] = list(map(destroy_parenthesis, lis[i]))
 
             for j in range(1, len(lis[i])):
@@ -231,8 +228,33 @@ def destroy_parenthesis(lis):
     out.pop()
     return out
 
+def simplify(string):
+    lis = token(string)
+    lis = destroy_parenthesis(lis)
+    lis = seprate_by_plus(lis)
+    for i in range(len(lis)):
+        lis[i] = clean(lis[i])
+    lis.sort(key= lambda x: x[0][2], reverse= True)
+    return lis
 
-def foo():
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    print()
+    print()
+
+    lis = simplify(string5)
+    print(lis)
+    print(lis)
+
+"""def foo():
     lis = token(string)
     lis = destroy_parenthesis(lis)
     lis = seprate_by_plus(lis)
@@ -246,27 +268,7 @@ def foo():
                 
     for i in range(len(lis)):
         if len(lis[i]) < size:
+            pass
 
 
-
-
-
-
-
-
-
-
-print()
-print()
-lis = token(string)
-lis = destroy_parenthesis(lis)
-print(lis)
-
-
-lis = seprate_by_plus(lis)
-for i in range(len(lis)):
-    lis[i].sort(key=lambda x:x[1], reverse= True)
-
-print(lis)
-lis.sort(key= lambda x: x[0][2])
-print(lis)
+"""
