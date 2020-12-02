@@ -247,28 +247,10 @@ def simplify(string):
 
 
 if __name__ == "__main__":
-    print()
-    print()
-
-    lis = simplify(string5)
-    print(lis)
-    print(lis)
-
-"""def foo():
-    lis = token(string)
-    lis = destroy_parenthesis(lis)
-    lis = seprate_by_plus(lis)
-    size = 0
-    vars = set()
-    for i in lis: 
-        if len(i) > size:
-            size = len
-            for j in i:
-                vars.add(j[1])
-                
-    for i in range(len(lis)):
-        if len(lis[i]) < size:
-            pass
-
-
-"""
+    string1 = '-12x(y(z-y(z)))'
+    string2 = '-12.3123'
+    string3 = '12x(y(z-y(z)))-12.432'
+    string4 = '0.987'
+    string5 = '1456.098g'
+    string6 = '(3+x^2)+xyz(xy+y-z)+x^3(1-3x)'
+    print(simplify(string6))

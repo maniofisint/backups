@@ -107,3 +107,4 @@ class polynomial:
 
 p = polynomial()
 print(p.is_var('s'))
+
