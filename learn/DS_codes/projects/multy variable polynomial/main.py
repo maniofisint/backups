@@ -302,12 +302,12 @@ class polynomial:
             if s.up is None: count = 1
             elif s.up.down is s:
                 if s in st:
+                    st.remove(s)
                     s = s.up.right
                     if s.up is None: break
                     while not f.up is None and f.up.CV < s.up.CV :
                         f = f.up
                     if not f.up.down is f: f = f.right
-                    st.remove(s)
                     continue
                 else:
                     st.add(s)
@@ -329,7 +329,7 @@ class polynomial:
                     if s in st: st.remove(s)
                     f = f.down
                     s.exp = 0
-                    
+
                 elif f.CV == s.CV:
                     f, s = f.down, s.down
 
