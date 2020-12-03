@@ -28,7 +28,7 @@ class ArrayStack2:
 class polynomial:
 
     class Node:
-        def __init__(self, up = None, down = None, right = None, left = None, exp = None, CV = None):
+        def __init__(self, up = None, down = None, right = None, left = None, exp:int = 0, CV = None):
             self.up = up
             self.down = down
             self.right = right
@@ -171,6 +171,8 @@ class polynomial:
         return out 
 
     def add(self, first:Node, second:Node):
+        """given to polynomials with each root.exp = 0 """
+
         def replace(f, s):
             """replace f by s"""
 
@@ -180,11 +182,13 @@ class polynomial:
             if s.up.down is s: s.up.down = empty_Node
 
             s.up = f.up
-            s.right = s.right
+            s.right = f.right
             s.left = f.left
             s.right.left = s
             s.left.right = s
             if not f.up is None and f.up.down is f: s.up.down = s
+
+            return s
 
         def insert_after(f, s):
             """isnert s after f"""
@@ -200,45 +204,77 @@ class polynomial:
             s.right.left = s
             f.right = s
 
-            return empty_Node
+            return s, empty_Node
+
+        def swap(f, s):
+            print('fuck')
+            hold = f
+
+            if not f.up is None and f.up.down is f: f.up.down = s
+            if not s.up is None and s.up.down is s: s.up.down = f  
+
+            f.right = s.right
+            f.left = s.left
+            f.up = s.up
+            f.right.left = f
+            f.left.right = f
+            
+            s.right = hold.right
+            s.left = hold.left
+            s.up = hold.up
+            s.right.left = s
+            s.left.right = s
+
+            return s, f
 
         if first.down is None and second.down is None:
-            return self.Node(exp= 0, CV= first.CV + second.CV)
+            first.CV += second.CV
+           
+        elif first.down is None:
+            first, second = swap(first, second)
+            second.exp = 0
+            first.down, second = self.add(first.down, second)
+    
 
-        if isinstance(first.CV, float):
-            replace(second.down, self.add(second.down, first))
-            return second
-        if isinstance(second.CV, float):
-            replace(first.down, self.add(first.down, second))
-            return first
+        elif second.down is None:
+            second.exp = 0
+            first.down, second = self.add(first.down, second)
 
-        if first.CV == second.CV:
+        elif first.CV == second.CV:
             f, s= first.down, second.down
             f_count, s_count = 0, 0
             while s_count == 0 or not s.up.down is s:
                 if s.up.down is s: s_count = 1
-
-                newNode = self.Node(down=s.down, exp=s.exp, CV=s.CV)
 
                 while f_count == 0 or not f.right.up.down is f.right:
                     if f.right.up.down is f.right: f_count = 1
                     if f.right.exp > s.exp:break
                     f = f.right
 
+                print((f.exp, s.exp))
                 if f.exp == s.exp:
-                    replace(f, self.add(f, newNode))
-                else:
-                    insert_after(f, newNode)
+                    hold = s.right
+                    f, s = self.add(f, s)
+                    s = hold
+                    continue
+                elif f.exp < s.exp:
+                    f, s = insert_after(f, s)
                 s = s.right
 
-            return first
+            
 
         elif first.CV > second.CV:
-            replace(first.down, self.add(first.down, second))
-            return first
+            second.exp = 0
+            first.down, second = self.add(first.down, second)
+            
+
         elif second.CV > first.CV:
-            replace(second.down, self.add(second.down, first))
-            return second
+            first, second = swap(first, second)
+            second.exp = 0
+            first.down, second = self.add(first.down, second)
+
+        return first, second
+            
 
     def NR_add(self, first:Node, second:Node):
         def insert_before(f, s):
@@ -372,24 +408,34 @@ if __name__ =="__main__":
     string7 = '(-1.2)x+(423)x^7'
 
     x = polynomial()  
-    a = x.convert(string)
-    b = x.convert(string2)
-    print(x.NR_print(a))
-    print(x.NR_print(b))
+    a = x.convert(string6)
+    b = x.convert(string5)
+    print(x.print(a))
+    print(x.print(b))
 
 
+    def swap(f, s):
+        print('fuck')
+        hold = f
 
+        if not f.up is None and f.up.down is f: f.up.down = s
+        if not s.up is None and s.up.down is s: s.up.down = f  
 
-    c = x.NR_add(a,b)
-    print(x.NR_print(c))
+        f.right = s.right
+        f.left = s.left
+        f.up = s.up
+        f.right.left = f
+        f.left.right = f
+            
+        s.right = hold.right
+        s.left = hold.left
+        s.up = hold.up
+        s.right.left = s
+        s.left.right = s
 
-    """y = x.convert(string)
-    print(x.print(y))
-    z = x.add(y,y)
-    print(x.print(z))
-    x.insert_after(y.down,y.down.right)
-    print(x.print(y))"""
+        return s, f
 
-
-
-
+    a, b.down = swap(a.down, b.down)
+    print('fu')
+    print(x.print(a))
+    print(x.print(b))
