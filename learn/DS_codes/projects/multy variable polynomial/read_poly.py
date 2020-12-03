@@ -325,6 +325,8 @@ class read_poly:
         lis.sort(key= lambda x: x[0][2], reverse= True)
         return lis
 
+
+
 if __name__ == '__main__':
     string1 = '-12x(y(z-y(z)))'
     string2 = '-12.3123'
