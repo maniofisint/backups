@@ -415,7 +415,6 @@ if __name__ =="__main__":
 
 
     def swap(f, s):
-        print('fuck')
         hold = f
 
         if not f.up is None and f.up.down is f: f.up.down = s
@@ -435,7 +434,7 @@ if __name__ =="__main__":
 
         return s, f
 
-    a, b.down = swap(a.down, b.down)
-    print('fu')
+    a, b.down = swap(a, b.down)
+ 
     print(x.print(a))
     print(x.print(b))
