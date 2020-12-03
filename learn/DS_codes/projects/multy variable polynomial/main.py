@@ -207,7 +207,6 @@ class polynomial:
             return s, empty_Node
 
         def swap(f, s):
-            print('fuck')
             hold = f
 
             if not f.up is None and f.up.down is f: f.up.down = s
