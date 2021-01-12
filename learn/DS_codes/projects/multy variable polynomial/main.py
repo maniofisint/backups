@@ -318,7 +318,7 @@ if __name__ =="__main__":
 
     string = "((3)+(1)x^2)z^2+(((-1)x^2)y+((1)x+(1)x^2)y^2)z^4+((1)+(-3)x)z^10"
     string2 = '(((-1.2)x+(423)x^7)y^6)+(15)z^2+((32)y^7)z^4'
-    #string = "((3)+(1)x^2)+(((-1)x^2)y+((1)x+(1)x^2)y^2)z+((1)+(-3)x)z^3"
+    string = "((3)+(1)x^2)+(((-1)x^2)y+((1)x+(1)x^2)y^2)z+((1)+(-3)x)z^3"
     string2 = '(((-1.2)x+(423)x^7)y^6)+(15)z^1+((32)y^7)z^5'
     string3 = '(12)x^9'
     string4 = '(42)w^10'
@@ -362,6 +362,12 @@ if __name__ =="__main__":
 
     def insert_after(f, s):
         """isnert s after f"""
+
+        if s.right is s: s.up.down = None
+        elif s.up.down is s: s.up.down = s.right
+
+        s.left.right = s.right
+        s.right.left = s.left
         s.right = f.right
         s.left = f
         s.up = f.up
