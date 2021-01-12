@@ -292,6 +292,7 @@ class read_poly:
                 if isinstance(i, str):
                     if i == '(':
                         return True
+            return False
 
         if not has_parenthesis():
             return lis
@@ -306,7 +307,7 @@ class read_poly:
                 for j in range(1, len(lis[i])):
                     lis[i][0] = mult(lis[i][0], lis[i][j])
 
-                lis[i] = lis[i][0]
+            lis[i] = lis[i][0]
 
         out = []
         for i in lis:
@@ -324,13 +325,25 @@ class read_poly:
         lis.sort(key= lambda x: x[0][2], reverse= True)
         return lis
 
+
+
 if __name__ == '__main__':
     string1 = '-12x(y(z-y(z)))'
     string2 = '-12.3123'
     string3 = '12x(y(z-y(z)))-12.432'
     string4 = '0.987'
     string5 = '1456.098g'
-    string6 = '(3+x^2)+xyz(xy+y-z)+x^3(1-3x)'
+    string6 = '(3+x^2)+xyz(xy+y-z)+x^3(1-3x)+12a'
     
     r = read_poly()
-    print(r.foo(string6))
+
+    """lis = r.token(string6)
+    print(lis)
+    lis = r.seprate_by_plus(lis)
+    print(lis)
+    lis = list(map(r.seprate_by_parenthesis, lis))
+    print(lis)
+    lis = r.destroy_parenthesis(lis)
+    print(lis)"""
+    x = r.foo(string6)
+    print(x)

@@ -36,8 +36,10 @@ class polynomial:
 
         return lis[0]
 
-
     def Print(self, p:Node):
+        return self._Print(p).replace('+-', '-')
+
+    def _Print(self, p:Node):
         out = str()
         while p is not None:
             coef = str()
@@ -59,14 +61,14 @@ class polynomial:
             p = p.next
         return out[:-1]
 
-    def print2(self, p:Node):
+    def debuging_print(self, p:Node):
         out = str()
         while p is not None:
             coef = str()
             if isinstance(p.coefficient, float):
                 coef = str(p.coefficient)
             else:
-                coef = self.print2(p.coefficient)
+                coef = self.debuging_print(p.coefficient)
             out += '(' + coef + ')' + str(p.variable) + '^' + str(p.exp) + '+'
             p = p.next
         return out[:-1]
@@ -244,11 +246,11 @@ x = polynomial()
 
 y = x.convert(string)
 z = x.convert(string2)
-print(x.print2(y).replace('+-', '-'))
-print(x.print2(z).replace('+-', '-'))
+print(x.Print(y))
+print(x.Print(z))
 
 f = x.add2(y,z)
-print(x.print2(f).replace('+-', '-'))
+print(x.Print(f))
 """
 print(y.coefficient)
 print(z.coefficient)"""
