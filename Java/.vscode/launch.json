@@ -1,0 +1,43 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch pythogorean",
+            "request": "launch",
+            "mainClass": "pythogorean",
+            "projectName": "Java_f59e880e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Example3",
+            "request": "launch",
+            "mainClass": "Example3",
+            "projectName": "Java_f59e880e"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "Java_f59e880e"
+        },
+        {
+            "type": "java",
+            "name": "Launch second_program",
+            "request": "launch",
+            "mainClass": "second_program",
+            "projectName": "Java_f59e880e"
+        },
+        {
+            "type": "java",
+            "name": "Launch first_program",
+            "request": "launch",
+            "mainClass": "first_program",
+            "projectName": "Java_f59e880e"
+        }
+    ]
+}
